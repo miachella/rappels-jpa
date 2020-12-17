@@ -59,7 +59,12 @@ public class Main implements CommandLineRunner {
 		Acteur act3 = em.find(Acteur.class, 5);
 		acteurs.add(act3);
 		filmAjout.setActeurs(acteurs);
-		em.persist(filmAjout);
+		//em.persist(filmAjout);
+		
+		Categorie cat10 = em.find(Categorie.class, 10);
+		em.remove(cat10);
+		Categorie cat13 = em.find(Categorie.class, 13);
+		em.remove(cat13);
 		
 	}
 }
