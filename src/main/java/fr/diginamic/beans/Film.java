@@ -24,10 +24,10 @@ public class Film {
 	@JoinColumn(name="id_categ")
 	private Categorie categorie;
 	@ManyToMany
-	@JoinTable(name="film_acteur",
+	@JoinTable(name="film_intervenant",
 			joinColumns = @JoinColumn(name="id_film", referencedColumnName = "id"),
-			inverseJoinColumns = @JoinColumn(name="id_acteur", referencedColumnName = "id"))
-	private List<Acteur> acteurs = new ArrayList<>();
+			inverseJoinColumns = @JoinColumn(name="id_intervenant", referencedColumnName = "id"))
+	private List<Intervenant> intervenants = new ArrayList<>();
 	
 	public Film() {
 		super();
@@ -49,12 +49,12 @@ public class Film {
 		this.titre = titre;
 	}
 
-	public List<Acteur> getActeurs() {
-		return acteurs;
+	public List<Intervenant> getIntervenants() {
+		return intervenants;
 	}
 
-	public void setActeurs(List<Acteur> acteurs) {
-		this.acteurs = acteurs;
+	public void setIntervenants(List<Intervenant> intervenants) {
+		this.intervenants = intervenants;
 	}
 
 	public String getAnnee_sortie() {
